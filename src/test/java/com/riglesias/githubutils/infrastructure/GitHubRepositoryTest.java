@@ -29,6 +29,9 @@ public class GitHubRepositoryTest {
     public static final int ZERO = 0;
     public static final String INVENTED_CITY = "Sijueiro";
     public static final int BY_PAGE = 20;
+    public static final int MORE_THAN_ME = 10;
+    public static final int JUST_ME = 1;
+    public static final String ME = "riglmei";
 
     @Autowired
     private GitHubRepository gitHubRepository;
@@ -49,6 +52,16 @@ public class GitHubRepositoryTest {
         final List<GitHubProfile> usersByLocation = gitHubRepository.getUsersByLocation(INVENTED_CITY,BY_PAGE);
         assertThat(usersByLocation, notNullValue());
         assertThat(usersByLocation.size(), equalTo(ZERO));
+
+    }
+
+
+    @Test
+    public void prooveThatIAmTheOnlyOneUserWithMyLogin(){
+
+        final List<GitHubProfile> usersByLocation = gitHubRepository.getUsersUserLogin(ME, MORE_THAN_ME);
+        assertThat(usersByLocation, notNullValue());
+        assertThat(usersByLocation.size(), equalTo(JUST_ME));
 
     }
 

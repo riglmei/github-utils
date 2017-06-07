@@ -10,6 +10,9 @@ import com.riglesias.githubutils.actions.GetUserProfilesAction;
 import com.riglesias.githubutils.domain.github.GitHubRepository;
 import com.riglesias.githubutils.infrastructure.GitHubRepositoryImpl;
 
+/**
+ * Spring Configuration class
+ */
 @Configuration
 public class SpringConfig {
 

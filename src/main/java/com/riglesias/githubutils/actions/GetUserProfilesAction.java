@@ -11,7 +11,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import com.riglesias.githubutils.domain.github.GitHubProfile;
 import com.riglesias.githubutils.domain.github.GitHubRepository;
 
-
+/**
+ * Use case of getting the GitHub users by a set
+ * of  given criteria
+ */
 public class GetUserProfilesAction {
 
 
@@ -24,6 +27,12 @@ public class GetUserProfilesAction {
     }
 
 
+    /**
+     * Gets a list of user profiles by location
+     * @param location
+     * @param perPage - optional parameter for pagination
+     * @return
+     */
     public List<GitHubProfile> getByLocation(final String location, final Optional<Integer> perPage){
 
 
