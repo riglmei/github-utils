@@ -27,7 +27,7 @@ public class GitHubRepositoryTest {
 
     public static final String CITY_WITH_USERS = "Barcelona";
     public static final int ZERO = 0;
-    public static final String INVENTED_CITY = "Sijueiro";
+    public static final String IMAGINARY_CITY = "Sijueiro";
     public static final int BY_PAGE = 20;
     public static final int MORE_THAN_ME = 10;
     public static final int JUST_ME = 1;
@@ -49,7 +49,7 @@ public class GitHubRepositoryTest {
     @Test
     public void testNoResults() {
 
-        final List<GitHubProfile> usersByLocation = gitHubRepository.getUsersByLocation(INVENTED_CITY,BY_PAGE);
+        final List<GitHubProfile> usersByLocation = gitHubRepository.getUsersByLocation(IMAGINARY_CITY,BY_PAGE);
         assertThat(usersByLocation, notNullValue());
         assertThat(usersByLocation.size(), equalTo(ZERO));
 
@@ -57,7 +57,7 @@ public class GitHubRepositoryTest {
 
 
     @Test
-    public void prooveThatIAmTheOnlyOneUserWithMyLogin(){
+    public void proveThatIAmTheOnlyOneUserWithMyLogin(){
 
         final List<GitHubProfile> usersByLocation = gitHubRepository.getUsersUserLogin(ME, MORE_THAN_ME);
         assertThat(usersByLocation, notNullValue());
